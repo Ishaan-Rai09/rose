@@ -96,8 +96,8 @@ function App() {
 
       {/* Background Music */}
       <audio ref={audioRef} loop>
-        <source src="Die With A Smile-(SambalpuriStar.In).mp3" type="audio/mpeg" />
-      </audio>
+  <source src="/abc.mp3" type="audio/mpeg" />
+</audio>
     </div>
   );
 }
