@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animated Background */
+.animated-bg {
+  background: linear-gradient(45deg, #ff69b4, #ff1493, #ff69b4);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+.background-animation {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+  animation: float 20s infinite;
+}
+
+.circle-1 {
+  width: 60vw;
+  height: 60vw;
+  left: -20vw;
+  top: -20vh;
+  animation-delay: 0s;
+}
+
+.circle-2 {
+  width: 40vw;
+  height: 40vw;
+  right: -10vw;
+  top: 30vh;
+  animation-delay: -5s;
+}
+
+.circle-3 {
+  width: 50vw;
+  height: 50vw;
+  left: 30vw;
+  bottom: -20vh;
+  animation-delay: -10s;
+}
+
+.circle-4 {
+  width: 45vw;
+  height: 45vw;
+  right: 20vw;
+  top: -10vh;
+  animation-delay: -15s;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+  25% { transform: translate(10%, 10%) scale(1.1); opacity: 0.5; }
+  50% { transform: translate(5%, -5%) scale(0.9); opacity: 0.7; }
+  75% { transform: translate(-10%, 5%) scale(1.2); opacity: 0.5; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+}
+
+/* Glass Panel Effect */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Text Shadow */
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow-sm {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Petal Animation */
+.petal {
+  width: 15px;
+  height: 15px;
+  background: linear-gradient(45deg, #fecdd3, #fb7185);
+  border-radius: 150% 0 150% 0;
+  animation: falling linear infinite;
+  transform: rotate(45deg);
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes falling {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Enhanced Rose Animation */
+.rose-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.3));
+}
+
+.rose path, .rose circle {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.rose-stem {
+  stroke: #15803d;
+  stroke-width: 4;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawLine 1.5s ease forwards;
+  filter: drop-shadow(0 0 2px rgba(21, 128, 61, 0.5));
+}
+
+.rose-leaf {
+  stroke: #16a34a;
+  stroke-width: 3;
+  fill: #86efac;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: drawLeaf 1.5s ease forwards 1s;
+  opacity: 0;
+  filter: drop-shadow(0 0 2px rgba(22, 163, 74, 0.5));
+}
+
+.rose-petal {
+  stroke: #e11d48;
+  stroke-width: 2;
+  fill: none;
+  opacity: 0;
+  filter: drop-shadow(0 0 3px rgba(225, 29, 72, 0.5));
+}
+
+.base-petal {
+  animation: drawPetal 1.5s ease forwards 2s;
+  fill: #fda4af;
+}
+
+.outer-petal-1 {
+  animation: drawPetal 1.5s ease forwards 2.5s;
+  fill: #fb7185;
+}
+
+.outer-petal-2 {
+  animation: drawPetal 1.5s ease forwards 3s;
+  fill: #f43f5e;
+}
+
+.outer-petal-3 {
+  animation: drawPetal 1.5s ease forwards 3.5s;
+  fill: #e11d48;
+}
+
+.inner-petal-1 {
+  animation: drawPetal 1.5s ease forwards 4s;
+  fill: #be123c;
+}
+
+.inner-petal-2 {
+  animation: drawPetal 1.5s ease forwards 4.5s;
+  fill: #9f1239;
+}
+
+.inner-petal-3 {
+  animation: drawPetal 1.5s ease forwards 5s;
+  fill: #881337;
+}
+
+.rose-center {
+  fill: #4c0519;
+  stroke: none;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 5.5s;
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawLeaf {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 100;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawPetal {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease forwards;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
